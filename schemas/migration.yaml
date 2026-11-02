@@ -1,0 +1,137 @@
+repository: top-maker/modsim
+revision: ce3dad25cbcaae660f02fd5fab271000bf3511b0
+models:
+- id: advantech/adam-5017uh
+  status: migrated
+  reason: MIT project model; vendor originals remain link-only
+  files:
+  - source: contrib/advantech/adam-5017uh/adam-5017uh.tm.json
+    sha256: 9e1d6e38dbb4e2db2f30f8dfd3d9df90a349b2e9aeb60a168ae4d60ee709ead7
+    destination: advantech/adam-5017uh/adam-5017uh.tm.json
+  - source: contrib/advantech/adam-5017uh/simulation/adam-5017uh-behavior.py
+    sha256: b1ec8ff3d0fe6e32127f587d5049523584adef479509f90c004c010f3ceeb789
+    destination: advantech/adam-5017uh/simulation/adam-5017uh-behavior.py
+  - source: contrib/advantech/adam-5017uh/simulation/adam-5017uh-scripted-analog-input.sim.json
+    sha256: efbd727d253febdb8e816e70a07e2314f2110f47e705eca8e942e0948c80417e
+    destination: advantech/adam-5017uh/simulation/adam-5017uh-scripted-analog-input.sim.json
+  - source: contrib/advantech/adam-5017uh/simulation/adam-5017uh.sim.json
+    sha256: 246e0eaf9234aaec6c85c63497a27bbd89c132e436345636c9cdba8969fd3c9f
+    destination: advantech/adam-5017uh/simulation/adam-5017uh.sim.json
+- id: advantech/adam-6024
+  status: migrated
+  reason: MIT project model; vendor originals remain link-only
+  files:
+  - source: contrib/advantech/adam-6024/adam-6024.tm.json
+    sha256: 4c2aee3334faf6622f4ee34a23108fa0ec100a6b3110a78200eee79da8935596
+    destination: advantech/adam-6024/adam-6024.tm.json
+  - source: contrib/advantech/adam-6024/simulation/adam-6024.sim.json
+    sha256: 2beb25195324919b10710d24dbdad93d9e3d4a37e857824faedf9246296c1cc0
+    destination: advantech/adam-6024/simulation/adam-6024.sim.json
+- id: siemens/3nx8-x-01
+  status: deferred
+  reason: Outside initial curated release; source and redistribution review required
+  files:
+  - source: contrib/siemens/3nx8-x-01/3nx8-x-01.tm.json
+    sha256: 9405aa7222c4b03b0573dbb24b6c435cafa1e019472bb5d79662b73035ff8198
+- id: siemens/3nx8-x-02
+  status: deferred
+  reason: Outside initial curated release; source and redistribution review required
+  files:
+  - source: contrib/siemens/3nx8-x-02/3nx8-x-02.tm.json
+    sha256: 7951f0892bd0f1ab75f45d8a1a757929d0b842a3bf8977f165d1adca00545d19
+- id: siemens/3rv29215m
+  status: deferred
+  reason: Outside initial curated release; source and redistribution review required
+  files:
+  - source: contrib/siemens/3rv29215m/3rv29215m.tm.json
+    sha256: 7c4f6c22d90ce85c18ba88eb2e7e1052bd97a1538ff01283796c3801946cf20f
+- id: siemens/5sl6-x-me
+  status: deferred
+  reason: Outside initial curated release; source and redistribution review required
+  files:
+  - source: contrib/siemens/5sl6-x-me/5sl6-x-me.tm.json
+    sha256: 8302c3ee56e052408ba417643029866612556bcd3c148b98927ff063552861fd
+- id: siemens/5sl60-x-mc
+  status: deferred
+  reason: Outside initial curated release; source and redistribution review required
+  files:
+  - source: contrib/siemens/5sl60-x-mc/5sl60-x-mc.tm.json
+    sha256: 5598ad96254736888eca8a2795cbec761361ea77fc5af1d2abc5605af7f7f002
+- id: siemens/5sl60-x-mf
+  status: deferred
+  reason: Outside initial curated release; source and redistribution review required
+  files:
+  - source: contrib/siemens/5sl60-x-mf/5sl60-x-mf.tm.json
+    sha256: 5a99e21285011600d436a616676f04e672e66fc8ecd2cbe4b4b3dc496d588573
+- id: siemens/5st30620mc
+  status: deferred
+  reason: Outside initial curated release; source and redistribution review required
+  files:
+  - source: contrib/siemens/5st30620mc/5st30620mc.tm.json
+    sha256: 791a081ea407ebb6d81f67d0d4800c5116573f4d9aef63e446fe6271c02ba2ed
+- id: siemens/5st30720mc
+  status: deferred
+  reason: Outside initial curated release; source and redistribution review required
+  files:
+  - source: contrib/siemens/5st30720mc/5st30720mc.tm.json
+    sha256: 35d44d1c3a434316df41b560f65b5e5a77def0d31b5d783a6dd15321299d5133
+- id: siemens/5st30730mc
+  status: deferred
+  reason: Outside initial curated release; source and redistribution review required
+  files:
+  - source: contrib/siemens/5st30730mc/5st30730mc.tm.json
+    sha256: 65f9635eb2fbefe5546645ee8dbc99768956fa9e74633a198084ee0d825ee579
+- id: siemens/5sv2-x-mr
+  status: deferred
+  reason: Outside initial curated release; source and redistribution review required
+  files:
+  - source: contrib/siemens/5sv2-x-mr/5sv2-x-mr.tm.json
+    sha256: baea374d6a758c7de88ee684cb924852caebb768b335c2d64e349dd81a340061
+- id: siemens/5sv60166mc
+  status: deferred
+  reason: Outside initial curated release; source and redistribution review required
+  files:
+  - source: contrib/siemens/5sv60166mc/5sv60166mc.tm.json
+    sha256: b05e607737c0cd7e72dfc07c5ef9f952560679f672ebd74300052942b053aa0c
+- id: siemens/5sv8-x
+  status: deferred
+  reason: Outside initial curated release; source and redistribution review required
+  files:
+  - source: contrib/siemens/5sv8-x/5sv8-x.tm.json
+    sha256: a960dff3352d8a5a3ceb30c2f9a53794007674e753ad8fc7f63c2878d5569840
+- id: siemens/5tt43222mc
+  status: deferred
+  reason: Outside initial curated release; source and redistribution review required
+  files:
+  - source: contrib/siemens/5tt43222mc/5tt43222mc.tm.json
+    sha256: c464f9970be121af9c190e1a5e9a09eecc4abec94fefc289ddf89997a2aa2dbc
+- id: siemens/5ty10503mf16
+  status: deferred
+  reason: Outside initial curated release; source and redistribution review required
+  files:
+  - source: contrib/siemens/5ty10503mf16/5ty10503mf16.tm.json
+    sha256: 267e07a1f29bb3311f3033857c6bdf575c699a901374a006721311b20c3b230d
+- id: siemens/5ty1350
+  status: deferred
+  reason: Outside initial curated release; source and redistribution review required
+  files:
+  - source: contrib/siemens/5ty1350/5ty1350.tm.json
+    sha256: 656edf1be226008333f11baa37ff049dcc46af941fbab7f7656f5987fd9fcecd
+- id: siemens/7kn11100mc00
+  status: deferred
+  reason: Outside initial curated release; source and redistribution review required
+  files:
+  - source: contrib/siemens/7kn11100mc00/7kn11100mc00.tm.json
+    sha256: 6cef35461ee0681aaf8bbf090d76cfd438d5bf4b0390774a83c2e9ac1aa29036
+- id: siemens/7kn11110mc00
+  status: deferred
+  reason: Outside initial curated release; source and redistribution review required
+  files:
+  - source: contrib/siemens/7kn11110mc00/7kn11110mc00.tm.json
+    sha256: f4afe801aeb532a308bf6e7c0a1a655c9a4c0e43ad8715f69c5985a0b9f4d3e0
+- id: siemens/7kn12100mc00
+  status: deferred
+  reason: Outside initial curated release; source and redistribution review required
+  files:
+  - source: contrib/siemens/7kn12100mc00/7kn12100mc00.tm.json
+    sha256: 3209e1c82d309ac36e79095a670be3dd806a8ff16923bf1bf9e7fe438d416640

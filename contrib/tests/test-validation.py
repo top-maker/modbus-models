@@ -40,7 +40,7 @@ class CatalogTests(unittest.TestCase):
         self.tm = self.root / "advantech/adam-5017uh/adam-5017uh.tm.json"
 
     def test_valid_catalog_and_reserved_templates(self):
-        self.assertEqual(check.validate_catalog(self.root), ["advantech/adam-5017uh"])
+        self.assertEqual(check.validate_catalog(self.root), ["advantech/adam-5017uh", "advantech/adam-6024"])
 
     def test_missing_record_and_mismatched_identity(self):
         source = self.record.read_text()

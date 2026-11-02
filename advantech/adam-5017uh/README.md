@@ -13,5 +13,6 @@ model; its notice is retained in the root LICENSE. Vendor manuals remain vendor
 copyright and are linked in device.yaml rather than redistributed.
 
 No software or hardware evidence is inherited simply by moving this file.
-Firmware is explicitly unknown. Device metadata is a draft until its schema
-producer and this data repository have immutable releases.
+Firmware is explicitly unknown. Metadata uses released schema 1; data tags and consumer pins are independent.
+Optional synthetic scenarios are in simulation/; scripted behavior requires explicit
+--allow-scripts. See ../../schemas/migration.yaml for preserved input hashes.
