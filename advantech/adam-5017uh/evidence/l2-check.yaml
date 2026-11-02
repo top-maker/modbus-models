@@ -1,0 +1,104 @@
+schema-version: '1'
+level: L2
+status: passed
+model:
+  path: ../adam-5017uh.tm.json
+  sha256: 9e1d6e38dbb4e2db2f30f8dfd3d9df90a349b2e9aeb60a168ae4d60ee709ead7
+scenario:
+  path: ../simulation/interop-inputs.sim.json
+  sha256: dd10b90523317122ea8b70cf21b7417bd60b688ea5b12e36fb798d9e2a6d5a58
+profile: '0.2'
+tools:
+  modsim: 2.0.0a2
+  simulator-interpreter: 0.2.0a2
+  modpoll: 2.0.0a2
+  client-interpreter: 0.2.0a1
+  node-wot-core: 0.9.2
+  node-wot-binding-modbus: 0.9.2
+covered:
+- AI0_RAW
+- AI1_RAW
+- AI2_RAW
+- AI3_RAW
+- AI4_RAW
+- AI5_RAW
+- AI6_RAW
+- AI7_RAW
+excluded:
+- Hardware communication and calibration
+- Physical writes, range configuration and rack/slot validation
+- Other models, data types, dynamic timing and managed lifecycle
+checks:
+- scope: request
+  status: passed
+  method: FC4 PDU start 1 / count 8 on synthetic loopback
+  expected: 000700000006010400010008
+  actual: 000700000006010400010008
+- scope: response
+  status: passed
+  method: Independent uint16 words in raw Modbus response
+  expected: 00070000001301041012348001abcd0000ffff002a0102fe01
+  actual: 00070000001301041012348001abcd0000ffff002a0102fe01
+- scope: modpoll
+  status: passed
+  method: Released client reads the fixed TM
+  expected:
+    AI0_RAW: 4660
+    AI1_RAW: 32769
+    AI2_RAW: 43981
+    AI3_RAW: 0
+    AI4_RAW: 65535
+    AI5_RAW: 42
+    AI6_RAW: 258
+    AI7_RAW: 65025
+  actual:
+    AI0_RAW: 4660
+    AI1_RAW: 32769
+    AI2_RAW: 43981
+    AI3_RAW: 0
+    AI4_RAW: 65535
+    AI5_RAW: 42
+    AI6_RAW: 258
+    AI7_RAW: 65025
+- scope: node-wot
+  status: passed
+  method: Actual 0.9.2 Consumer reads exported TD
+  expected:
+    AI0_RAW: 4660
+    AI1_RAW: 32769
+    AI2_RAW: 43981
+    AI3_RAW: 0
+    AI4_RAW: 65535
+    AI5_RAW: 42
+    AI6_RAW: 258
+    AI7_RAW: 65025
+  actual:
+    AI0_RAW: 4660
+    AI1_RAW: 32769
+    AI2_RAW: 43981
+    AI3_RAW: 0
+    AI4_RAW: 65535
+    AI5_RAW: 42
+    AI6_RAW: 258
+    AI7_RAW: 65025
+- scope: wrong-byte-order
+  status: passed
+  method: Deliberate LITTLE_ENDIAN TD must disagree with expected 0x1234
+  expected: 13330
+  actual: 13330
+executed-at: '2026-11-02T07:30:06.435141Z'
+executor: GitHub Actions / top-maker/modsim
+run-url: https://github.com/top-maker/modsim/actions/runs/41406659385
+test-revision: 2ee3d9bfe013a6933864b4bdf7aeba54c06eab46
+td:
+  sha256: b11fc1507775d22fe60437bbbb45a3b300e682bce5d0190e308ce62c3e1cd778
+  host: 127.0.0.1
+  port: 49493
+  unit-id: 1
+  target: node-wot-0.9.2
+limitations:
+- Synthetic loopback TCP, Unit ID 1; eight uint16 inputs only. No L3 claim.
+- Run used data commit 0a617aa4cdfef060b53bb9a821562f8da0f5e5b9. Model and scenario
+  hashes are the exact evidence scope.
+- Node-wot target is the faithfully expressible 0.9.2 uint16 subset. Firmware remains
+  unknown.

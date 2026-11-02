@@ -8,7 +8,8 @@ This repository contains no interpreter, simulator runtime or website.
 Metadata schema 1 is provided by released `modpoll-wot==0.2.0a3`.
 `schemas/schema-source.yaml` pins its source revision, artifact hashes and bundled
 schema hash. The schema definition is not copied or independently maintained here.
-Data release `modbus-models-v1` is the initial curated catalog. Consumers must
+Data release `modbus-models-v2` adds scoped L2 evidence and reproducible inputs
+to the initial curated catalog; the existing v1 release remains immutable. Consumers must
 resolve its immutable tag to a full commit SHA and pin file hashes; never use a
 floating branch. See schemas/migration.yaml for preserved TM/scenario bytes and
 models deferred from the initial release. Vendor originals remain link-only.

@@ -14,3 +14,9 @@ No hardware or software evidence is inherited by migration.
 
 Use the fixed TM URL with modsim. Prepare the optional scenario locally from
 this same data revision; only explicit --allow-scripts permits local Python.
+
+The project TM and declarative simulation files are MIT-licensed. Vendor
+reference materials remain link-only and are not covered by that permission.
+
+The project TM and declarative simulation files are MIT-licensed. Vendor
+reference materials remain link-only and are not covered by that permission.
