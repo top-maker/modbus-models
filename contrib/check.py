@@ -8,6 +8,7 @@ from pathlib import Path
 import sys
 
 import yaml
+from evidence import load_yaml, validate_evidence
 from modpoll_wot import loads_model, validate_standard
 from modpoll_wot.metadata import load_device_record
 
@@ -65,6 +66,13 @@ def validate_catalog(root):
                 port=5020,
                 unit_id=1,
             )
+        evidence_schema = load_yaml((root / "schemas/evidence-schema.yaml").read_bytes())
+        for evidence in sorted((directory / "evidence").glob("*.yaml")):
+            document = load_yaml(contained(evidence, directory).read_bytes())
+            def read_reference(value):
+                return contained(evidence.parent / value, directory).read_bytes()
+            model = json.loads(read_reference(document["model"]["path"]))
+            validate_evidence(document, evidence_schema, read_reference, set(model["properties"]))
         entries.append(record["id"])
     if not entries:
         raise ValueError("No publishable model records found")

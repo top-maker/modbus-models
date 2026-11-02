@@ -11,6 +11,8 @@ from tempfile import TemporaryDirectory
 import unittest
 
 import yaml
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 ROOT = Path(__file__).resolve().parents[2]
 spec = importlib.util.spec_from_file_location(
