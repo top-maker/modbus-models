@@ -1,19 +1,33 @@
 # Modbus Models
 
 Public device Thing Models, product metadata and explicitly scoped evidence.
-The repository is a data source; it contains no Modbus interpreter, simulator
-runtime or website. Models live in `<vendor>/<model>/`. Scenarios and images are
-optional and require their own source, compatibility and permission review.
+Models live in `<vendor>/<model>/`; optional scenes and images need their own
+compatibility, source and redistribution review. Register maps belong only in TMs.
+This repository contains no interpreter, simulator runtime or website.
 
-This checkout is an initial candidate, not a released catalog. The metadata
-schema is owned by modpoll-wot. Its schema-1 producer candidate has not yet been
-published; schemas/producer-candidate.yaml records that dependency without
-requiring an unavailable package in public installation or CI configuration.
-After the producer release is verified, pin its exact wheel/schema hashes, add
-public validation CI and issue an immutable data tag. `contrib/check.py` is
-prepared but fails closed until the released `schemas/schema-source.yaml` pin
-is present; no workflow is enabled against an unavailable producer. Do not use a floating
-branch as a consumer dependency.
+Metadata schema 1 is provided by released `modpoll-wot==0.2.0a3`.
+`schemas/schema-source.yaml` pins its source revision, artifact hashes and bundled
+schema hash. The schema definition is not copied or independently maintained here.
+The data catalog is not yet tagged; consumers must use an explicitly selected
+commit until the first data release, never a floating branch.
 
-See [contribution guidance](contrib/guide.md). Register maps belong only in TMs;
-metadata and simulation inputs must not duplicate addresses or decoding rules.
+## Check a contribution
+
+Use Python 3.12 in a clean environment:
+
+```sh
+python -m pip install --require-hashes -r contrib/requirements.txt
+python contrib/check.py
+python contrib/tests/test-validation.py -v
+```
+
+The dependency lock is generated from `contrib/requirements.in` using the command
+recorded in its header. Updating it requires checking the producer release and
+schema hash, then rerunning the catalog and invalid-input tests.
+
+Catalog validation checks metadata, TM structure/profile, stable IDs and local
+reference containment. It does not verify permission claims, calibration or real
+hardware. The evidence template deliberately starts at `not-tested`.
+
+The default branch is `main`; all changes enter through a PR and the required
+`catalog` check, including administrators. See [contribution guidance](contrib/guide.md).

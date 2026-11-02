@@ -12,8 +12,12 @@ include credentials, private endpoints, serial numbers or private customer data.
 Vendor documents and photos need their own redistribution basis; an upstream
 file being publicly accessible does not grant permission to mirror it.
 
-The templates are drafts pending an immutable schema producer release. A future
-contribution CI must validate TMs, metadata, references and file containment before
-merge. Configuration checks, software interoperability and hardware communication
-are separate evidence categories; report exact versions, coverage and limitations.
+Target `main` with a pull request. CI uses the exact released producer and schema
+hash in schemas/schema-source.yaml. It validates TMs, metadata, references and
+containment and rejects malformed-record regressions. A minimal TM-only PR may
+remain pending while a maintainer adds the publication record; contributors are
+not required to prepare the full metadata themselves.
+
+Configuration checks, software interoperability and hardware communication are
+separate evidence categories; report exact versions, coverage and limitations.
 Never label an unexecuted check as passed. A merged model is not hardware certification.

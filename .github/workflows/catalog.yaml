@@ -1,0 +1,23 @@
+name: Catalog validation
+on:
+  push:
+    branches: [main, v2]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  catalog:
+    name: catalog
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install released producer and hash-locked dependencies
+        run: python -m pip install --require-hashes -r contrib/requirements.txt
+      - name: Validate pinned schema, metadata, models and references
+        run: python contrib/check.py
+      - name: Reject malformed records and escaping references
+        run: python contrib/tests/test-validation.py -v
