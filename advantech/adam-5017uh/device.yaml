@@ -1,0 +1,19 @@
+schema-version: "1"
+id: "advantech/adam-5017uh"
+vendor: "Advantech"
+model: "ADAM-5017UH"
+order-codes: []
+aliases: []
+firmware: null
+models:
+  - path: "adam-5017uh.tm.json"
+sources:
+  - url: "https://advdownload.advantech.com/productfile/Downloadfile3/1-21FOSAD/ADAM-5000-TCP_User_Manual_Ed.1-FINAL.pdf"
+    locator: "Section 3.5 and section 6.3.1; verify rack and slot addressing"
+    basis: "documentation-derived"
+  - url: "https://advdownload.advantech.com/productfile/Downloadfile4/1-2HXFOVU/ADAM-5000_User_Manual_Ed.4_FINAL.pdf"
+    locator: "Section 1.2.5: ADAM-5017UH specifications and ranges"
+    basis: "documentation-derived"
+redistribution:
+  model-license: "MIT"
+  reference-files: "link-only"

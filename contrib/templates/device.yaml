@@ -1,0 +1,15 @@
+# Draft example. Replace every placeholder and confirm the actual license.
+schema-version: "1"
+id: "example-vendor/example-model"
+vendor: "Example Vendor"
+model: "Example Model"
+firmware: null
+models:
+  - path: "example-model.tm.json"
+sources:
+  - url: "https://example.com/manual"
+    locator: "Replace with the source section/page"
+    basis: "documentation-derived"
+redistribution:
+  model-license: "MIT"  # Example only, not an assignment of rights
+  reference-files: "link-only"

@@ -1,0 +1,26 @@
+# Draft template; do not turn missing results into a pass.
+level: "L1"
+status: "not-tested"
+model:
+  path: "../example-model.tm.json"
+  sha256: null
+profile: "0.2"
+tools:
+  modpoll-wot: null
+checks:
+  - scope: "tm-schema"
+    method: null
+    expected: "valid"
+    actual: null
+  - scope: "modbus-binding"
+    method: null
+    expected: "valid"
+    actual: null
+  - scope: "profile"
+    method: null
+    expected: "valid"
+    actual: null
+executed-at: null
+executor: null
+run-url: null
+limitations: ["No software-interoperability or hardware claim"]
