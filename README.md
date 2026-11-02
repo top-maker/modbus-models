@@ -10,7 +10,9 @@ schema is owned by modpoll-wot. Its schema-1 producer candidate has not yet been
 published; schemas/producer-candidate.yaml records that dependency without
 requiring an unavailable package in public installation or CI configuration.
 After the producer release is verified, pin its exact wheel/schema hashes, add
-public validation CI and issue an immutable data tag. Do not use a floating
+public validation CI and issue an immutable data tag. `contrib/check.py` is
+prepared but fails closed until the released `schemas/schema-source.yaml` pin
+is present; no workflow is enabled against an unavailable producer. Do not use a floating
 branch as a consumer dependency.
 
 See [contribution guidance](contrib/guide.md). Register maps belong only in TMs;

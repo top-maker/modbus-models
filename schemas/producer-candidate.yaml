@@ -1,7 +1,7 @@
 # Candidate provenance only; not a published package dependency or CI lock.
 state: "awaiting-producer-release"
 repository: "top-maker/modpoll"
-commit: "fb1564e4169ad75cdd5378a99c39d2c939915038"
+commit: "427459a6ce275e0b39f3dd2871363006699eff16"
 source-path: "packages/modpoll-wot/schemas/device-schema.yaml"
 package-candidate: "0.2.0a3"
 schema-version: "1"
