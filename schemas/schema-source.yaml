@@ -1,0 +1,9 @@
+package: modpoll-wot
+version: 0.2.0a3
+source-revision: 427459a6ce275e0b39f3dd2871363006699eff16
+release-tag: modpoll-wot-v0.2.0a3
+wheel-sha256: 1a1f6f4fd9bc7f486e4dde7b54507ad355ec501c179bf7177f5541b803a7430b
+sdist-sha256: bb0e1e4e6678ddd660955c7e6c5347d3382223d22241138830b267235c5cf279
+schema-version: '1'
+schema-resource: modpoll_wot/schemas/device-schema.yaml
+schema-sha256: d630151f672d8aaf249205f677075a9cc535325cbd349d89611d5933fb860642
