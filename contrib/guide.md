@@ -21,3 +21,9 @@ not required to prepare the full metadata themselves.
 Configuration checks, software interoperability and hardware communication are
 separate evidence categories; report exact versions, coverage and limitations.
 Never label an unexecuted check as passed. A merged model is not hardware certification.
+
+L2 product records use schemas/evidence-schema.yaml. Keep model/scenario hashes,
+actual CI run and test revision, exact tool versions, expected/actual checks,
+covered/excluded properties and limitations. Catalog CI rejects hash drift and
+passed records containing failed or mismatched checks; it does not execute or
+certify hardware. No evidence is required merely to propose a new model.

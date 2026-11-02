@@ -16,3 +16,17 @@ No software or hardware evidence is inherited simply by moving this file.
 Firmware is explicitly unknown. Metadata uses released schema 1; data tags and consumer pins are independent.
 Optional synthetic scenarios are in simulation/; scripted behavior requires explicit
 --allow-scripts. See ../../schemas/migration.yaml for preserved input hashes.
+
+The project TM and declarative simulation files are MIT-licensed. Vendor
+reference materials remain link-only and are not covered by that permission.
+
+Scoped software evidence: [L2 check](evidence/l2-check.yaml), using the exact
+[fixed input scenario](simulation/interop-inputs.sim.json). Other mappings and
+hardware remain unverified; changes to either input hash invalidate this record.
+
+The project TM and declarative simulation files are MIT-licensed. Vendor
+reference materials remain link-only and are not covered by that permission.
+
+Scoped software evidence: [L2 check](evidence/l2-check.yaml), using the exact
+[fixed input scenario](simulation/interop-inputs.sim.json). Other mappings and
+hardware remain unverified; changes to either input hash invalidate this record.

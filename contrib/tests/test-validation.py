@@ -104,6 +104,23 @@ class CatalogTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "duplicate YAML key"):
             check.validate_catalog(self.root)
 
+    def test_evidence_rejects_hash_and_result_drift(self):
+        path = self.root / "advantech/adam-5017uh/evidence/l2-check.yaml"
+        original = path.read_text()
+        record = yaml.safe_load(original)
+        record["model"]["sha256"] = "0" * 64
+        path.write_text(yaml.safe_dump(record))
+        with self.assertRaisesRegex(ValueError, "hash differs"):
+            check.validate_catalog(self.root)
+        record = yaml.safe_load(original)
+        record["checks"][0]["actual"] = "not the measured result"
+        path.write_text(yaml.safe_dump(record))
+        with self.assertRaisesRegex(ValueError, "unpassed check"):
+            check.validate_catalog(self.root)
+        path.write_text(original + "status: passed\n")
+        with self.assertRaisesRegex(ValueError, "unique string keys"):
+            check.validate_catalog(self.root)
+
 
 if __name__ == "__main__":
     unittest.main()
